@@ -19,7 +19,7 @@ dependencies:
   firebase_storage: ^12.4.5
   firebase_messaging: ^15.2.5
 
-  provider: ^6.1.2
+  flutter_riverpod: ^2.6.1
   google_maps_flutter: ^2.12.1
   geolocator: ^14.0.0
   geocoding: ^3.0.0
