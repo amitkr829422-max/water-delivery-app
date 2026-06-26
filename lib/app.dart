@@ -1,3 +1,4 @@
+import 'package:water_delivery_app/app/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:water_delivery_app/screens/splash/splash_screen.dart';
 
@@ -10,10 +11,7 @@ class WaterDeliveryApp extends StatelessWidget {
       title: 'Water Delivery 💧',
       debugShowCheckedModeBanner: false,
 
-      theme: ThemeData(
-        useMaterial3: true,
-        colorSchemeSeed: Colors.blue,
-        fontFamily: 'Roboto',
+      theme: AppTheme.lightTheme,
       ),
 
       home: const SplashScreen(),
