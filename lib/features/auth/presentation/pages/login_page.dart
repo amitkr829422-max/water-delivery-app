@@ -107,17 +107,24 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 const SizedBox(height: 15),
 
                 TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
+                  onPressed: authState.isLoading
+    ? null
+    : () async {
+        await authNotifier.login(
+          emailController.text,
+          passwordController.text,
+        );
+
+        if (context.mounted) {
+          Navigator.pushReplacementNamed(
+            context,
+            "/role-selection",
+          );
+        }
+      },
+                  
+                    
+                    
+                  
+                
+              
