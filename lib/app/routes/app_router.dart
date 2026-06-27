@@ -1,3 +1,4 @@
+import '../../features/plant_owner/presentation/pages/plant_dashboard.dart';
 import 'package:flutter/material.dart';
 
 import '../../features/auth/presentation/pages/login_page.dart';
@@ -22,7 +23,10 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const CustomerDashboard(),
         );
-
+case '/plant-dashboard':
+  return MaterialPageRoute(
+    builder: (_) => const PlantDashboard(),
+  );
       default:
         return MaterialPageRoute(
           builder: (_) => const Scaffold(
