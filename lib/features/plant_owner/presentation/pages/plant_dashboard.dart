@@ -8,71 +8,57 @@ class PlantDashboard extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Plant Owner Dashboard"),
-        backgroundColor: Colors.green,
-        foregroundColor: Colors.white,
+        centerTitle: true,
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            const Text(
+              "Welcome Plant Owner",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 20),
 
-            _buildCard(
-              title: "Add Products",
-              icon: Icons.add_box,
-              color: Colors.green,
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.water_drop, color: Colors.blue),
+                title: const Text("Water Stock"),
+                subtitle: const Text("150 Jars Available"),
+              ),
             ),
 
-            _buildCard(
-              title: "Manage Orders",
-              icon: Icons.shopping_cart,
-              color: Colors.blue,
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.shopping_cart, color: Colors.green),
+                title: const Text("Today's Orders"),
+                subtitle: const Text("25 Orders"),
+              ),
             ),
 
-            _buildCard(
-              title: "Delivery Boys",
-              icon: Icons.delivery_dining,
-              color: Colors.orange,
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.people, color: Colors.orange),
+                title: const Text("Customers"),
+                subtitle: const Text("120 Active Customers"),
+              ),
             ),
 
-            _buildCard(
-              title: "Reports",
-              icon: Icons.bar_chart,
-              color: Colors.purple,
-            ),
+            const SizedBox(height: 20),
 
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("Manage Orders"),
+              ),
+            ),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildCard({
-    required String title,
-    required IconData icon,
-    required Color color,
-  }) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 15),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
-        borderRadius: BorderRadius.circular(15),
-        border: Border.all(color: color),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, color: color, size: 30),
-          const SizedBox(width: 15),
-          Text(
-            title,
-            style: TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: color,
-            ),
-          ),
-        ],
       ),
     );
   }
